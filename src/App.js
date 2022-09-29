@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 // Style CSS avec Styled-components
@@ -33,10 +33,10 @@ function App() {
   // State du composant
   const [count, setCount] = useState(0);
 
-  // Fonctions de mises à jour du state avec le hook useCallback
-  const increment = useCallback(() => setCount((counter) => counter + 1), []);
-  const decrement = useCallback(() => setCount((counter) => counter - 1), []);
-  const reset = useCallback(() => setCount(() => 0), []);
+  // Fonctions de mises à jour du state
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(0);
 
   return (
     <div className="App">
